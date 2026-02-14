@@ -40,6 +40,10 @@ function App() {
   const prevTrack = () => setCurrentTrack((prev) => (prev - 1 + tracks.length) % tracks.length)
 
   useEffect(() => {
+    // Preload first track
+    const audio = new Audio(tracks[0].src)
+    audio.load()
+
     // Simulate loading
     const interval = setInterval(() => {
       setLoadingProgress((prev) => {
@@ -52,7 +56,7 @@ function App() {
     }, 50)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [tracks])
 
   const handleStartApp = () => {
     setIsLoading(false)
@@ -100,7 +104,7 @@ function App() {
 
   return (
     <>
-      <audio ref={audioRef} src={tracks[currentTrack].src} onEnded={nextTrack} />
+      <audio ref={audioRef} src={tracks[currentTrack].src} onEnded={nextTrack} preload="auto" />
 
       {currentPage === 'dashboard' ? (
         <Dashboard onNavigate={navigateToPage} />

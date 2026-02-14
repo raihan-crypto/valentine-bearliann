@@ -19,6 +19,14 @@ const Gallery = ({ onBack }) => {
     { id: 8, image: '/photos/8.jpg', caption: 'Moment 8' },
   ]
 
+  // Preload Images on Mount
+  useEffect(() => {
+    photoList.forEach((photo) => {
+      const img = new Image()
+      img.src = photo.image
+    })
+  }, [])
+
   const handleStartPrint = () => {
     setIsPrinting(true)
     setCurrentPrintIndex(0)
@@ -28,10 +36,17 @@ const Gallery = ({ onBack }) => {
 
   useEffect(() => {
     if (isPrinting && currentPrintIndex < photoList.length) {
+      // Logic:
+      // 1. Wait a bit (animation time)
+      // 2. Add photo to list
+      // 3. Increment index
       const timer = setTimeout(() => {
-        setPrintedPhotos(prev => [...prev, photoList[currentPrintIndex]])
+        setPrintedPhotos(prev => {
+          const nextPhoto = photoList[currentPrintIndex]
+          return [...prev, nextPhoto]
+        })
         setCurrentPrintIndex(prev => prev + 1)
-      }, 1500) // 1.5 detik per foto
+      }, 800)
 
       return () => clearTimeout(timer)
     } else if (isPrinting && currentPrintIndex >= photoList.length) {
