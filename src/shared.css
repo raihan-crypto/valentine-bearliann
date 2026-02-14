@@ -1,0 +1,91 @@
+/* Shared Styles - Game Boy Inspired */
+
+.back-btn,
+.success-btn,
+.danger-btn {
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+/* SELANJUTNYA Button - Green */
+.success-btn {
+  background: linear-gradient(180deg, #10dd81 0%, #0ebd6d 100%);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #0a9955;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.success-btn:hover {
+  background: linear-gradient(180deg, #12f591 0%, #10dd81 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #0a9955;
+}
+
+.success-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #0a9955;
+}
+
+/* KEMBALI Button - Red */
+.danger-btn {
+  background: linear-gradient(180deg, #ff6b6b 0%, #dd4f4f 100%);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #b33939;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.danger-btn:hover {
+  background: linear-gradient(180deg, #ff8080 0%, #ff6b6b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #b33939;
+}
+
+.danger-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #b33939;
+}
+
+/* MULAI CETAK Button - Red (Gallery) */
+.primary-btn {
+  background: linear-gradient(180deg, #ff6b6b 0%, #dd4f4f 100%);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #b33939;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(180deg, #ff8080 0%, #ff6b6b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #b33939;
+}
+
+.primary-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #b33939;
+}
+
+/* Glass Container - Removed, using solid backgrounds */
+.glass-container {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  padding: 1.5rem;
+}

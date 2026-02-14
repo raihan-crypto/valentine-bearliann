@@ -1,0 +1,108 @@
+.dashboard {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.screen-title-main {
+  font-size: 32px;
+  color: #00ff88;
+  text-shadow: 0 0 20px #00ff88;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+.screen-subtitle-main {
+  font-size: 14px;
+  color: #ffeb3b;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.dashboard-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7px;
+  color: #00ff88;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.info-left, .info-right {
+  opacity: 0.8;
+}
+
+.menu-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: auto;
+}
+
+.menu-btn-rect {
+  padding: 12px 6px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 90px;
+}
+
+.menu-btn-rect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+
+.menu-btn-rect:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Button Colors - Bright Nintendo Style */
+.menu-btn-blue {
+  background: linear-gradient(180deg, #5b7fff 0%, #4865dd 100%);
+}
+
+.menu-btn-red {
+  background: linear-gradient(180deg, #ff6b6b 0%, #dd4f4f 100%);
+}
+
+.menu-btn-purple {
+  background: linear-gradient(180deg, #a855f7 0%, #8e3fd5 100%);
+}
+
+.menu-btn-green {
+  background: linear-gradient(180deg, #10dd81 0%, #0ebd6d 100%);
+}
+
+@media (max-width: 480px) {
+  .screen-title-main {
+    font-size: 24px;
+  }
+  
+  .screen-subtitle-main {
+    font-size: 11px;
+  }
+  
+  .menu-btn-rect {
+    padding: 1.2rem 0.8rem;
+    font-size: 13px;
+  }
+}

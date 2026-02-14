@@ -1,0 +1,438 @@
+.device-frame {
+  width: 100%;
+  max-width: 850px;
+  background: #d0d0d0;
+  /* Classic Silver/Gray */
+  border-radius: 15px 15px 40px 15px;
+  /* Signature GB asymmetric corner */
+  padding: 20px 40px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 2px 5px rgba(255, 255, 255, 0.8),
+    0 0 0 2px #bbb;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  min-height: 600px;
+  aspect-ratio: 16/11;
+  /* Enforce landscape proportion */
+}
+
+/* Header */
+.device-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.03);
+  padding-bottom: 5px;
+}
+
+.header-left .power-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.power-led {
+  width: 10px;
+  height: 10px;
+  background: #ff0000;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #ff0000;
+  animation: blink 3s infinite;
+}
+
+.header-left span {
+  font-size: 10px;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.device-branding {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Screen Section */
+.screen-section {
+  width: 100%;
+  background: #555;
+  /* Dark gray bezel area */
+  border-radius: 15px 15px 40px 15px;
+  padding: 25px 40px 10px 40px;
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.screen-lens {
+  width: 100%;
+  max-width: 90%;
+  background: #000;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.screen-display {
+  width: 100%;
+  height: 200px;
+  /* Fixed landscape height */
+  background: #0f380f;
+  /* Matrix Green */
+  border: 4px solid #8bac0f;
+  /* Requested GREEN border */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(15, 56, 15, 0.9), rgba(15, 56, 15, 0.9)),
+    repeating-linear-gradient(0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 255, 0, 0.1) 2px,
+      rgba(0, 255, 0, 0.1) 4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Middle Body Area (Menu Buttons) */
+.device-body-area {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Bottom Controls */
+.bottom-controls-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  margin-top: auto;
+}
+
+/* D-PAD */
+.d-pad-area {
+  flex: 1;
+}
+
+.d-pad {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.d-pad-btn {
+  position: absolute;
+  background: #2b2b2b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.d-pad-up {
+  width: 34px;
+  height: 38px;
+  left: 33px;
+  top: 0;
+}
+
+.d-pad-down {
+  width: 34px;
+  height: 38px;
+  left: 33px;
+  bottom: 0;
+}
+
+.d-pad-left {
+  width: 38px;
+  height: 34px;
+  top: 33px;
+  left: 0;
+}
+
+.d-pad-right {
+  width: 38px;
+  height: 34px;
+  top: 33px;
+  right: 0;
+}
+
+.d-pad-center {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  background: #2b2b2b;
+  top: 33px;
+  left: 33px;
+}
+
+.d-pad-center::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #222 20%, transparent 30%);
+}
+
+/* Center Controls (Select/Start) */
+.center-controls {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  /* Push down relative to others */
+}
+
+.control-pill-group {
+  display: flex;
+  gap: 20px;
+}
+
+.control-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pill-btn {
+  width: 50px;
+  height: 14px;
+  background: #666;
+  border-radius: 10px;
+  transform: rotate(-25deg);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.control-pill span {
+  font-size: 10px;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+/* Action Buttons */
+.action-buttons-area {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  transform: rotate(-10deg);
+  /* Slight classic tilt */
+}
+
+.action-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.action-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #ba1e1e;
+  /* Classic deep red */
+  box-shadow: 0 4px 0 #8a1616, 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.action-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #8a1616;
+}
+
+/* Footer */
+.device-footer-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.speaker-grill-left,
+.speaker-grill-right {
+  width: 80px;
+  height: 40px;
+  background: repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 5px,
+      rgba(0, 0, 0, 0.1) 5px,
+      rgba(0, 0, 0, 0.1) 8px);
+  border-radius: 5px;
+}
+
+.brand-logo {
+  font-family: 'Arial', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 2px;
+  font-style: italic;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Scaling */
+@media (max-width: 800px) {
+  .device-frame {
+    max-width: 95%;
+    min-height: auto;
+    aspect-ratio: auto;
+    padding: 15px;
+  }
+
+  .screen-display {
+    height: auto;
+    aspect-ratio: 4/3;
+    min-height: 250px;
+  }
+}
+
+/* Mobile Vertical Layout (iPhone XR / Phones) */
+@media (max-width: 600px) {
+  .device-frame {
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    background: #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Full height */
+    overflow: hidden;
+  }
+
+  .device-header {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .screen-section {
+    padding: 10px;
+    margin-bottom: 20px;
+    flex: 1;
+    /* Take available space */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .screen-lens {
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .screen-display {
+    width: 100%;
+    height: 100%;
+    /* Fill the lens */
+    min-height: 0;
+    /* Allow shrinking */
+    border-width: 2px;
+  }
+
+  /* Controls Layout for Mobile */
+  .bottom-controls-area {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 0;
+    transform: none;
+    /* Remove rotation if any */
+  }
+
+  /* D-Pad on Left */
+  .d-pad-area {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Action Buttons on Right */
+  .action-buttons-area {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+    transform: rotate(-10deg);
+    /* Keep slight tilt */
+  }
+
+  /* Start/Select at Bottom Center */
+  .center-controls {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    padding-top: 10px;
+    width: 100%;
+    justify-content: center;
+    transform: none;
+    /* Reset individual transform */
+  }
+
+  .d-pad {
+    transform: scale(0.9);
+  }
+
+  .action-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .device-footer-bar {
+    display: none;
+    /* Hide footer to save space */
+  }
+}
